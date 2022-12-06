@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\public\\stylesheets",
+    "\\public\\stylesheets\\frontend",
+    "\\public\\vendor\\bootstrap\\css",
+    "\\routes",
+    "\\views",
+    "\\views\\partials",
+    "\\views\\partials\\frontend"
+  ],
+  "SelectedNode": "\\public\\stylesheets\\frontend\\main.css",
+  "PreviewInSolutionExplorer": false
+}

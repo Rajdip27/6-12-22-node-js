@@ -1,0 +1,66 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
+                <li class="breadcrumb-item active"><a>Team</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+                <!-- Table with hoverable rows -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                           
+                            <th scope="col">Name</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            
+                            <td>{{name}}</td>
+                            <td>{{designation}}</td>
+                            <td>
+                              <img src="/{{image}}" width="60px" alt="{{title}}">
+                            </td>
+                             <td class="w-50 align-center text-center">
+                      <div class="row">
+                        <div class="col">
+                        <a href="/admin/team/{{id}}/show" class="btn btn-outline-info btn-sm">Show</a>
+
+                        </div>
+                        <div class="col">
+                        <a href="/admin/team/{{id}}/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+
+                        </div>
+                        <div class="col">
+
+                        <form action="/admin/team/{{id}}/delete" method="post">
+                          <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                        </form>
+                        </div>
+                      </div>
+
+                    </td>
+                        </tr>
+                        {{/each}}
+                       
+                    </tbody>
+                </table>
+                <!-- End Table with hoverable rows -->
+                <a href="/admin/team/create" class="btn btn-outline-success btn-sm">Data Create</a>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
