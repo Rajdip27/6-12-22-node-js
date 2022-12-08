@@ -33,15 +33,15 @@ router.get('/contact', ContactContorller.index);
 
 router.get('/contact/create', ContactContorller.create);
 
-router.get('/contact/edit', ContactContorller.edit);
+router.get('/contact/:id/edit', ContactContorller.edit);
 
-router.delete('/contact/delete', ContactContorller.delete);
+router.delete('/contact/:id/delete', ContactContorller.delete);
 
-router.get('/contact/show', ContactContorller.show);
+router.get('/contact/:id/show', ContactContorller.show);
 
 router.post('/contact/store', ContactValidator.store,ContactContorller.store);
 
-router.put('/contact/update',ContactContorller.update);
+router.put('/contact/:id/update',ContactContorller.update);
 
 
 
@@ -68,15 +68,15 @@ router.get('/testimonial', TestimonialController.index);
 
 router.get('/testimonial/create', TestimonialController.create);
 
-router.get('/testimonial/edit', TestimonialController.edit);
+router.get('/testimonial/:id/edit', TestimonialController.edit);
 
-router.delete('/testimonial/delete', TestimonialController.delete);
+router.delete('/testimonial/:id/delete', TestimonialController.delete);
 
-router.get('/testimonial/show', TestimonialController.show);
+router.get('/testimonial/:id/show', TestimonialController.show);
 
 router.post('/testimonial/store',TestimonialValidator.store, TestimonialController.store);
 
-router.put('/testimonial/update',TestimonialController.update);
+router.put('/testimonial/:id/update',TestimonialController.update);
 //about//
 
 router.get('/about', aboutController.index);

@@ -98,44 +98,44 @@ module.exports={
       store: (req, res, next)=> {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-          return res.json({error:errors.mapped()});
+          res.redirect("admin/team/create")
         }
-        let sampleFile;
-        if (!req.files || Object.keys(req.files).length === 0) {
-          return res.status(400).send('No files were uploaded.');
-        }
-
-        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-        sampleFile = req.files.image;
+        let sampleFile,filePath;
+        if (req.files || Object.keys(req.files).length !== 0) {
+          sampleFile = req.files.image;
         let rnd=new Date().valueOf();
-        let filePath='upload/' +rnd+sampleFile.name;
+         filePath='upload/' +rnd+sampleFile.name;
       
         // Use the mv() method to place the file somewhere on your server
         sampleFile.mv('public/'+filePath, function(err) {
-          if (err)
-            return res.status(500).send(err);
-      
-          res.send('File uploaded!');
+          if (err){
+            res.redirect("admin/team/create")
+          }
+            
         });
+        }
+
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        
 
 
 
         const team = new TeamModel({
-          name: team.name,
+          name:req.body.name,
           image: filePath,
-          designation: team.designation,
-          facebook: team.facebook,
-          twitter: team.twitter,
-          instagram: team.instagram,
-          linked: team.linked
+          designation: req.body.designation,
+          facebook: req.body.facebook,
+          twitter: req.body.twitter,
+          instagram: req.body.instagram,
+          linked: req.body.linked
         })
 
         team.save((err,newTeam)=>{
           if(err){
-            return res.json({error:errors.mapped()});
+            res.redirect("admin/team/create")
           }
           
-          //return res.json({team:newTeam});
+          res.redirect("/admin/team");
         })
 
 

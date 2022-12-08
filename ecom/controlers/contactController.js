@@ -13,7 +13,6 @@ module.exports={
         Contac.push({
               title:element.title,
               details:element.details,
-             
               image:element.image,
               id:element._id
           });
@@ -37,39 +36,47 @@ module.exports={
   },
 
   show: (req, res, next)=> {
-    ContactModel.find((err,docs)=>{
-      if(err){
-          return res.json({error:"Something went wrong!"+err})
-      }
-      return res.json({contact:docs});
-  })
-    res.render('backend/contact/show', { title: 'Admin Contact show', layout: 'backend/layout' });
+
+     BlogModel.findById(req.params.id)
+        .then((blog)=>{
+            // blog list
+            const details={
+                title:blog.title,
+                details:blog.details,
+                image:blog.image
+            }
+            // console.log(details);
+            res.render('backend/blog/show', { title: 'Blog',layout:"backend/layout",blog:details });
+        })
+        .catch((err)=>{
+            res.json({"error":"Somethiong went wrong!"});
+        })
   },
 
   store: (req, res, next)=> {
    
     const errors=validationResult(req);
     if(!errors.isEmpty()){
-        return res.json({errors:errors.mapped()});
+      return res.render("backend/contact/create",{layout:"backend/layout",errors:errors.mapped()})
     }
 
-    let sampleFile;
-    if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send('No files were uploaded.');
-    }
-
-    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-    sampleFile = req.files.image;
+    let sampleFile,filePath;
+    if (req.files || Object.keys(req.files).length !== 0) {
+      ampleFile = req.files.image;
     let rnd=new Date().valueOf();
-    let filePath='upload/' +rnd+sampleFile.name;
+    filePath='upload/' +rnd+sampleFile.name;
   
     // Use the mv() method to place the file somewhere on your server
     sampleFile.mv('public/'+filePath, function(err) {
-      if (err)
-        return res.status(500).send(err);
-  
-      res.send('File uploaded!');
+      if (err){
+        res.redirect("/admin/contact/create");
+      }
+        
     });
+    }
+
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    
     const contact = new ContactModel({
       image:filePath ,
       title: req.body.title,
@@ -78,13 +85,12 @@ module.exports={
 
     contact.save((err,newContact)=>{
       if(err){
-        return res.json({error:errors.mapped()});
+        res.redirect("/admin/contact/create");
       }
-      //return res.json({contact:newContact});
+      res.redirect("/admin/contact/");
     })
 
-    // return res.json(req.body);
-    // res.render('index', { layout: 'backend/layout', });
+    
   },
 
   update: (req, res, next)=> {

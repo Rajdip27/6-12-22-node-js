@@ -21,12 +21,11 @@
                             <th scope="col">Designation</th>
                             <th scope="col">Image</th>
                             <th scope="col">Details</th>
-
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each data}}
+                        {{#each test}}
                         
                         <tr>
                             
@@ -39,9 +38,9 @@
                             
                            
                             <td>
-                                <a href="admin/testimonial/1/show" class="btn btn-outline-info btn-sm">Show</a>
-                                <a href="admin/testimonial/1/edit" class="btn btn-outline-primary btn-sm">Edit</a>
-                                <a href="admin/testimonial/1/delete" class="btn btn-outline-danger btn-sm">Delete</a>
+                                <a href="admin/testimonial/{{id}}/show" class="btn btn-outline-info btn-sm">Show</a>
+                                <a href="admin/testimonial/{{id}}/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+                                <a href="admin/testimonial/{{id}}/delete" class="btn btn-outline-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         {{/each}}

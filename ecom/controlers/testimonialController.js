@@ -16,8 +16,9 @@ module.exports={
           designation:element.designation,
           id:element._id
           });
+
       });
-      res.render('backend/testimonial/index', { title: 'Testimonial',layout:"backend/layout",data:testimonial });
+      res.render('backend/testimonial/index', { title: 'Testimonial',layout:"backend/layout",test:testimonial });
   });
 
 
@@ -29,11 +30,43 @@ module.exports={
   },
 
   edit: (req, res, next) => {
-    res.render('backend/testimonial/edit', { title: 'Admin testimonial edit', layout: 'backend/layout' });
+    TestimonialModel.findById(req.params.id)
+    .then(( Testimonial)=>{
+        // blog list
+        const details={
+          name:Testimonial.name,
+          designation:Testimonial.designation,
+            id:Testimonial._id,
+            details:Testimonial.details,
+            image:Testimonial.image,
+            
+        }
+        // console.log(details);
+        res.render('backend/testimonial/edit', { title: 'Blog Edit',layout:"backend/layout",blog:details });
+    })
+    //res.render('backend/testimonial/edit', { title: 'Admin testimonial edit', layout: 'backend/layout' });
   },
 
   delete: (req, res, next) => {
-    res.render('index', { title: 'Admin testimonial delete', layout: 'backend/layout' });
+    TestimonialModel.findByIdAndRemove(req.params.id,(err,blog)=>{
+      if(err){
+          console.log("Could not deleted=====");
+      }
+      try{
+          fs.unlink("public/"+blog.image,()=>{
+              console.log("File Deleted....")
+          })
+
+
+      }
+      catch(error){
+          console.log("Something Went Wrong....")
+
+      }
+
+  })
+  res.redirect("/admin/blog");
+   // res.render('index', { title: 'Admin testimonial delete', layout: 'backend/layout' });
   },
 
   show: (req, res, next) => {
@@ -50,26 +83,28 @@ module.exports={
     
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.json({ error: errors.mapped() });
+      return res.render("backend/testimonial/create",{layout:"backend/layout",errors:errors.mapped()})
     }
 
-    let sampleFile;
-        if (!req.files || Object.keys(req.files).length === 0) {
-          return res.status(400).send('No files were uploaded.');
-        }
-
-        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-        sampleFile = req.files.image;
+    let sampleFile,filePath;
+        if (req.files || Object.keys(req.files).length !== 0) {
+          sampleFile = req.files.image;
         let rnd=new Date().valueOf();
-        let filePath='upload/' +rnd+sampleFile.name;
+       filePath='upload/' +rnd+sampleFile.name;
       
         // Use the mv() method to place the file somewhere on your server
         sampleFile.mv('public/'+filePath, function(err) {
-          if (err)
-            return res.status(500).send(err);
-      
-          res.send('File uploaded!');
+        if (err){
+          res.redirect("admin/testimonial/create")
+
+        }
+
+            
         });
+        }
+
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        
 
     const testimonial = new TestimonialModel({
       name: req.body.name,
@@ -80,8 +115,10 @@ module.exports={
 
     testimonial.save((err, newTestimonial) => {
       if (err) {
-        return res.json({ error: errors.mapped() });
+        res.redirect("admin/testimonial/create")
+              
       }
+      res.redirect("/admin/testimonial");
       //return res.json({ testimonial: newTestimonial });
     });
     // return res.json(req.body);
@@ -89,7 +126,46 @@ module.exports={
   },
 
   update: (req, res, next) => {
-    res.render('index', { title: 'Admin testimonial update', layout: 'backend/layout' });
+
+    const errors=validationResult(req);
+        if(!errors.isEmpty()){
+            return res.json({errors:errors.mapped()});
+        }
+        let sampleFile,filePath;
+        if (req.files ) {
+            sampleFile = req.files.image;
+            let rnd=new Date().valueOf();
+             filePath='upload/' +rnd+sampleFile.name;
+          
+            // Use the mv() method to place the file somewhere on your server
+            sampleFile.mv('public/'+filePath, function(err) {
+              if (err)
+                res.redirect("/admin/testimonial/create");
+            });
+        }
+
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+       
+        const blogObj={
+          name:req.body.name,
+          designation:req.body.designation,
+            details:req.body.details
+
+        }
+        if(filePath){
+            blogObj.image=filePath;
+        }
+
+        
+        TestimonialModel.findByIdAndUpdate(req.params.id,blogObj,(err,blog)=>{
+            if(err){
+                res.redirect("/admin/testimonial/"+req.params.id+"/edit")
+
+            }
+            res.redirect("/admin/testimonial")
+        });
+
+    //res.render('index', { title: 'Admin testimonial update', layout: 'backend/layout' });
   },
 
 }

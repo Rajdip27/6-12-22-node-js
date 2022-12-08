@@ -33,7 +33,8 @@ module.exports={
                 slug:blog.slug,
                 id:blog._id,
                 details:blog.details,
-                image:blog.image
+                image:blog.image,
+                
             }
             // console.log(details);
             res.render('backend/blog/edit', { title: 'Blog Edit',layout:"backend/layout",blog:details });
@@ -134,27 +135,26 @@ module.exports={
 
         const errors=validationResult(req);
         if(!errors.isEmpty()){
-            return res.json({errors:errors.mapped()});
+            return res.render("backend/blog/create",{layout:"backend/layout",errors:errors.mapped()})
         }
 
-        let sampleFile;
-        if (!req.files || Object.keys(req.files).length === 0) {
-          return res.status(400).send('No files were uploaded.');
-        }
 
-        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        let sampleFile,filePath;
+        if (req.files || Object.keys(req.files).length !== 0) {
+           // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
         sampleFile = req.files.image;
         let rnd=new Date().valueOf();
-        let filePath='upload/' +rnd+sampleFile.name;
+         filePath='upload/' +rnd+sampleFile.name;
       
         // Use the mv() method to place the file somewhere on your server
         sampleFile.mv('public/'+filePath, function(err) {
           if (err)
-            return res.status(500).send(err);
-      
-          res.send('File uploaded!');
+           res.redirect("admin/blog/create")
         });
 
+        }
+
+       
 
         const blog=new BlogModel({
             title:req.body.title,
@@ -165,12 +165,13 @@ module.exports={
 
         blog.save((err,newBlog)=>{
             if(err){
-              return res.json({error:"Something went wrong!"+err})
+                res.redirect("admin/blog/create")
+              
             }
            // return res.json({blog:newBlog});
 
           // res.redirect("/admin/blog")
-          //res.redirect("/admin/blog");
+          res.redirect("/admin/blog");
            
         });
 
