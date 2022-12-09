@@ -55,12 +55,12 @@ module.exports={
 
       delete: (req, res, next)=> {
 
-        TeamModel.findByIdAndRemove(req.params.id,(err,about)=>{
+        TeamModel.findByIdAndRemove(req.params.id,(err,team)=>{
           if(err){
               console.log("Could not deleted=====");
           }
           try{
-              fs.unlink("public/"+about.image,()=>{
+              fs.unlink("public/"+team.image,()=>{
                   console.log("File Deleted....")
               })
 

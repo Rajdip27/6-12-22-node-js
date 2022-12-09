@@ -1,11 +1,10 @@
-
 <main id="main" class="main">
 
     <div class="pagetitle">
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
-                <li class="breadcrumb-item active"><a>Testimonial</a></li>
+                <li class="breadcrumb-item active"><a>Contact</a></li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -17,7 +16,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            
+
                             <th scope="col">Title</th>
                             <th scope="col">Image</th>
                             <th scope="col">Details</th>
@@ -29,18 +28,24 @@
                         <tr>
                             <td>{{title}}</td>
                             <td>
-                               <img src="/{{image}}" width="60px" alt="{{title}}">  
+                                <img src="/{{image}}" width="60px" alt="{{title}}">
                             </td>
                             <td>{{details}}</td>
-                            
-                            
+
+
                             <td>
                                 <a href="/admin/contact/{{id}}/show" class="btn btn-outline-info btn-sm">Show</a>
                                 <a href="/admin/contact/{{id}}/edit" class="btn btn-outline-primary btn-sm">Edit</a>
-                                <a href="/admin/contact/{{id}}/delete" class="btn btn-outline-danger btn-sm">Delete</a>
+
+
+
+                                <form action="/admin/contact/{{id}}/delete" method="post">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                                </form>
+
                             </td>
                         </tr>
-                           {{/each}}
+                        {{/each}}
                     </tbody>
                 </table>
                 <!-- End Table with hoverable rows -->

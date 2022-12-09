@@ -35,13 +35,13 @@ router.get('/contact/create', ContactContorller.create);
 
 router.get('/contact/:id/edit', ContactContorller.edit);
 
-router.delete('/contact/:id/delete', ContactContorller.delete);
+router.post('/contact/:id/delete', ContactContorller.delete);
 
 router.get('/contact/:id/show', ContactContorller.show);
 
 router.post('/contact/store', ContactValidator.store,ContactContorller.store);
 
-router.put('/contact/:id/update',ContactContorller.update);
+router.post('/contact/:id/update',ContactContorller.update);
 
 
 
@@ -70,13 +70,13 @@ router.get('/testimonial/create', TestimonialController.create);
 
 router.get('/testimonial/:id/edit', TestimonialController.edit);
 
-router.delete('/testimonial/:id/delete', TestimonialController.delete);
+router.post('/testimonial/:id/delete', TestimonialController.delete);
 
 router.get('/testimonial/:id/show', TestimonialController.show);
 
 router.post('/testimonial/store',TestimonialValidator.store, TestimonialController.store);
 
-router.put('/testimonial/:id/update',TestimonialController.update);
+router.post('/testimonial/:id/update',TestimonialController.update);
 //about//
 
 router.get('/about', aboutController.index);

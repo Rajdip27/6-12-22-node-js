@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const ContactSchema = new mongoose.Schema({
     image : {
         type : String,
-        required : true
+        required :false
     },
 
     title : {
