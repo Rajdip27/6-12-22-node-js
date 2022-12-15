@@ -4,6 +4,8 @@ const config=require('./../config/index')
 const BlogModel=require('../models/blog');
 const TestimonialModel = require('../models/testimonial')
 const TeamModel = require('../Models/team')
+const ContactModel = require('../Models/contact')
+const AboutModel = require('../Models/about')
 
 
 module.exports={
@@ -81,9 +83,43 @@ module.exports={
         
     },
     contactUs:(req,res,next)=>{
-        res.render('forntend/contact_us',{title:'home'});
+      ContactModel.find((err, docs) => {
+        if (err) {
+          require.res.json({ error: "Something Went Worng!" + err });
+        }
+        const contact = [];
+        docs.forEach(element => {
+          contact.push({
+            title: element.title,
+            details: element.details,
+            image: element.image,
+            
+          });
+  
+        });
+        //res.render('backend/contact/index', { title: 'Contact', layout: "backend/layout", data: contact });
+        res.render('forntend/contact_us',{title:'home',Contact:contact});
+      });
+        
     },
     about:(req,res,next)=>{
-        res.render('forntend/about',{title:'home'});
+      AboutModel.find((err,docs)=>{
+        if(err){
+            require.res.json({error:"Something Went Worng!"+err});
+        }
+        const about=[];
+        docs.forEach(element=>{
+          about.push({
+                title:element.title1,
+                details:element.details,
+                image:element.image,
+               
+            });
+        });
+       // res.render('backend/about/index', { title: 'Admin about', layout: 'backend/layout',data:about });
+       res.render('forntend/about',{title:'home',About:about});
+    });
+
+        
     }
 }
