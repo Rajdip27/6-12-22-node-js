@@ -1,31 +1,149 @@
-
-<br>
-<br>
-<br>
-
-
-<div class="blog_section layout_padding">
-         <div class="container">
-            <h1 class="news_taital">Our Bolgs</h1>
-           
-            {{#each data}}
-
-            <div class="blog_section_2">
-               <div class="row">
-                  <div class="col-md-6">
-                     <img src="{{image}}" class="image_7" style="width:100%">
-                  </div>
-                  <div class="col-md-6">
-                     <h4 class="classes_text">{{title}}</h4>
-                     <p class="ipsum_text">{{details}} </p>
-                  </div>
-               </div>
-            </div>
-             {{/each}}
-
-
-            
-         </div>
+ <br>
+ <br>
+ <div class="container bg-light">
+      <div class="text-center my-5">
+        <h1>Our Blogs</h1>
+        <hr />
       </div>
-      <!-- blog section end -->
-      
+
+      <div class="row">
+         {{#each data}}
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+            <img src="{{image}}" class="img-fluid" />
+
+            <div class="card-body">
+              <div class="card-title">
+               <h2>{{title}}</h2>
+              </div>
+              <div class="card-text">
+                <p>
+                 {{details}}
+                </p>
+              </div>
+              {{!-- <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+                >Read More</a
+              > --}}
+            </div>
+          </div>
+        </div>
+         {{/each}}
+
+
+
+        {{!-- <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+            <img src="imgs/b.jpg" class="img-fluid" />
+
+            <div class="card-body">
+              <div class="card-title">
+                <h2>This is the blog title</h2>
+              </div>
+              <div class="card-text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Deleniti corporis quis ab. Exercitationem et quibusdam
+                  impedit? Sint vitae labore nulla sit, dignissimos non tempore,
+                  maxime facere, quod harum aliquid in...
+                </p>
+              </div>
+              <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+            <img src="imgs/c.jpg" class="img-fluid" />
+
+            <div class="card-body">
+              <div class="card-title">
+                <h2>This is the blog title</h2>
+              </div>
+              <div class="card-text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Deleniti corporis quis ab. Exercitationem et quibusdam
+                  impedit? Sint vitae labore nulla sit, dignissimos non tempore,
+                  maxime facere, quod harum aliquid in...
+                </p>
+              </div>
+              <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div> --}}
+
+        {{!-- <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+            <img src="imgs/d.jpg" class="img-fluid" />
+
+            <div class="card-body">
+              <div class="card-title">
+                <h2>This is the blog title</h2>
+              </div>
+              <div class="card-text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Deleniti corporis quis ab. Exercitationem et quibusdam
+                  impedit? Sint vitae labore nulla sit, dignissimos non tempore,
+                  maxime facere, quod harum aliquid in...
+                </p>
+              </div>
+              <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div> --}}
+
+        {{!-- <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+            <img src="imgs/e.jpg" class="img-fluid" />
+
+            <div class="card-body">
+              <div class="card-title">
+                <h2>This is the blog title</h2>
+              </div>
+              <div class="card-text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Deleniti corporis quis ab. Exercitationem et quibusdam
+                  impedit? Sint vitae labore nulla sit, dignissimos non tempore,
+                  maxime facere, quod harum aliquid in...
+                </p>
+              </div>
+              <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div> --}}
+
+        {{!-- <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+            <img src="imgs/f.jpg" class="img-fluid" />
+
+            <div class="card-body">
+              <div class="card-title">
+                <h2>This is the blog title</h2>
+              </div>
+              <div class="card-text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Deleniti corporis quis ab. Exercitationem et quibusdam
+                  impedit? Sint vitae labore nulla sit, dignissimos non tempore,
+                  maxime facere, quod harum aliquid in...
+                </p>
+              </div>
+              <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div> --}}
+      </div>
+    </div>
