@@ -34,7 +34,7 @@ module.exports = {
   edit: (req, res, next) => {
     TestimonialModel.findById(req.params.id)
       .then((Testimonial) => {
-        // blog list
+        // Testimonial list
         const details = {
           name: Testimonial.name,
           designation: Testimonial.designation,
@@ -44,7 +44,7 @@ module.exports = {
 
         }
         // console.log(details);
-        res.render('backend/testimonial/edit', { title: 'Blog Edit', layout: "backend/layout", testimonial: details });
+        res.render('backend/testimonial/edit', { title: 'Testimonial Edit', layout: "backend/layout", testimonial: details });
       })
     //res.render('backend/testimonial/edit', { title: 'Admin testimonial edit', layout: 'backend/layout' });
   },
@@ -73,12 +73,26 @@ module.exports = {
 
   show: (req, res, next) => {
     TestimonialModel.find((err, docs) => {
-      if (err) {
-        return res.json({ error: "Something went wrong!" + err })
-      }
-      return res.json({ testimonial: docs });
+
+
+      
+      TestimonialModel.findById(req.params.id)
+        .then((Testimonial)=>{
+            // Testimonial list
+            const details={
+              details:Testimonial.details,
+              name:Testimonial.name,
+                image:Testimonial.image,
+                designation:Testimonial.designation
+            }
+            // console.log(details);
+            res.render('backend/testimonial/show', { title: 'testimonial show',layout:"backend/layout",Testimonial:details });
+        })
+        .catch((err)=>{
+            res.json({"error":"Somethiong went wrong!"});
+        })
     })
-    res.render('backend/testimonial/show', { title: 'Admin testimonial show', layout: 'backend/layout' });
+    //res.render('backend/testimonial/show', { title: 'Admin testimonial show', layout: 'backend/layout' });
   },
 
   store: (req, res, next) => {

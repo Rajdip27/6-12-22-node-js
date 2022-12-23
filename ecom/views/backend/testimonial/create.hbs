@@ -14,39 +14,54 @@
 
             <div class="card">
                 <div class="card-body">
-                    <!-- Floating Labels Form -->
-                    <form class="row g-3 my-3" method="post" action="/admin/testimonial/store"encType="multipart/form-data">
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" placeholder="Name" name="name">
-                                <label>Name</label>
-                            </div>
+                    <div class="mt-4 mb-4">
+                <h2 class="mt-5 mb-5 border border-success bg-success text-white rounded   " style="text-align: center;">Testimonial Create</h5>
+
+              </div>
+                        <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" placeholder="Designation" name="designation">
-                                <label>Designation</label>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                             <label>Image</label>
-                            <div class="form-floating">
-                                <input type="file" class="form-control" name="image">
-                               
-                            </div>
-                            <div class="col-12">
+                        <!-- Floating Labels Form -->
+                        <form class="row g-3 my-3" method="post" action="/admin/testimonial/store"
+                            encType="multipart/form-data">
+                            <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea type="text" class="form-control" placeholder="Details" style="height: 100px;" name="details"></textarea>
-                                    <label>Details</label>
+                                    <input type="text" class="form-control" placeholder="Name" name="name">
+                                    <label>Name</label>
                                 </div>
                             </div>
-                        </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" placeholder="Designation"
+                                        name="designation">
+                                    <label>Designation</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                {{!-- <label>Image</label>
+                                <div class="form-floating">
+                                    <input type="file" class="form-control" name="image">
 
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
-                        </div>
-                    </form><!-- End floating Labels Form -->
+                                </div> --}}
+                                <div>
+                                    <label for="formFileLg" class="form-label">Image</label>
+                                    <input class="form-control form-control-lg" id="formFileLg" placeholder="Image"
+                                        name="image" type="file">
+                                </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea type="text" class="form-control" placeholder="Details"
+                                            style="height: 100px;" name="details"></textarea>
+                                        <label>Details</label>
+                                    </div>
+                                </div>
+                            
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form><!-- End floating Labels Form -->
 
                 </div>
             </div>

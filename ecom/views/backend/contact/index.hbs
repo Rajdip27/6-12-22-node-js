@@ -12,10 +12,11 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
+                <a href="/admin/contact/create" class="btn btn-primary btn-lg position-center mt-3 mb-3 text-center"><i class="bi bi-plus-circle"></i>&nbsp Create</a>
                 <!-- Table with hoverable rows -->
                 <table class="table table-hover">
                     <thead>
-                        <tr>
+                        <tr class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
 
                             <th scope="col">Title</th>
                             <th scope="col">Image</th>
@@ -33,15 +34,24 @@
                             <td>{{details}}</td>
 
 
-                            <td>
-                                <a href="/admin/contact/{{id}}/show" class="btn btn-outline-info btn-sm">Show</a>
-                                <a href="/admin/contact/{{id}}/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+                            <td class="w-50 align-center text-center">
+                                <div class="row">
+                                    <div class="col">
+                                <a href="/admin/contact/{{id}}/show" class="btn btn-outline-info btn-sm"><i class="bi bi-eye-fill"></i></a>
+                                </div>
+                                <div class="col">
+                                <a href="/admin/contact/{{id}}/edit" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                </div>
+                                <div class="col">
 
 
 
+                                
                                 <form action="/admin/contact/{{id}}/delete" method="post">
-                                    <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
                                 </form>
+                                </div>
+                                </div>
 
                             </td>
                         </tr>
@@ -49,7 +59,7 @@
                     </tbody>
                 </table>
                 <!-- End Table with hoverable rows -->
-                <a href="/admin/contact/create" class="btn btn-outline-success btn-sm">Data Create</a>
+                
 
             </div>
         </div>

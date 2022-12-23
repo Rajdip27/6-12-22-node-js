@@ -5,7 +5,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
         <li class="breadcrumb-item"><a >About</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item active">Edit</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -15,6 +15,12 @@
 
         <div class="card">
           <div class="card-body">
+              <div class="mt-4 mb-4">
+                <h2 class="mt-5 mb-5 border border-success bg-success text-white rounded   " style="text-align: center;">About Edit</h5>
+
+              </div>
+                    <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
+          </div>
 
             <!-- Floating Labels Form -->
             <form class="row g-3 my-3" method="post" action="/admin/about/{{about.id}}/update"encType="multipart/form-data">
@@ -31,13 +37,18 @@
                 </div>
               </div>
               <div class="col-md-12">
-                <label>Image</label>
+                {{!-- <label>Image</label>
                 <div class="form-floating">
                     <img src="/{{about.image}}" width="200px" alt="{{about.title}}">
                   <input type="file" class="form-control" placeholder="Image"
                     name="image">
                   
-                </div>
+                </div> --}}
+                <div>
+                {{!-- <label for="formFileLg" class="form-label">Image</label> --}}
+                 <img src="/{{about.image}}" width="200px" class="border border-info mb-1" alt="{{about.title}}">
+                 <input class="form-control form-control-lg" id="formFileLg" placeholder="Image" name="image" type="file">
+              </div>
               </div>
               <div class="col-12">
                 <div class="form-floating">
