@@ -21,16 +21,16 @@
                     <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
           </div>
           <!-- Floating Labels Form -->
-          <form class="row g-3 my-3" method="post" action="/admin/contact/{{contact.id}}/update"encType="multipart/form-data">
+          <form class="row g-3 my-3" method="post" action="/admin/contact/{{Contact.id}}/update"encType="multipart/form-data">
             <div class="col-md-12">
               <div class="form-floating">
-                <input type="text" class="form-control" value="{{contact.title}}" placeholder="Title" name="title">
+                <input type="text" class="form-control" value="{{Contact.title}}" placeholder="Title" name="title">
                 <label>Title</label>
               </div>
             </div>
             <div class="col-12">
               <div class="form-floating">
-                <textarea type="text" class="form-control" value="{{contact.details}}" placeholder="Details" style="height: 100px;" name="details"></textarea>
+                <textarea type="text" class="form-control" value="{{Contact.details}}" placeholder="Details" style="height: 100px;" name="details"></textarea>
                 <label>Details</label>
               </div>
             </div>
@@ -44,7 +44,7 @@
               <div>
                 {{!-- <label for="formFileLg" class="form-label">Image</label> --}}
                  {{!-- <img src="/{{about.image}}" width="200px" class="border border-info mb-1" alt="{{about.title}}"> --}}
-                 <img src="/{{contact.image}}" width="200px" class="border border-info mb-1" alt="{{contact.title}}">
+                 <img src="/{{Contact.image}}" width="200px" class="border border-info mb-1" alt="{{contact.title}}">
                  <input class="form-control form-control-lg" id="formFileLg" placeholder="Image" name="image" type="file">
               </div>
             </div>

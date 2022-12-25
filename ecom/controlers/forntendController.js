@@ -10,7 +10,24 @@ const AboutModel = require('../Models/about')
 
 module.exports={
     home:(req,res,next)=>{
-        res.render('forntend/index',{title:'home'});
+      BlogModel.find((err,docs)=>{
+        if(err){
+            require.res.json({error:"Something Went Worng!"+err});
+        }
+        const blog=[];
+        docs.forEach(element=>{
+            blog.push({
+                image:element.image,
+                
+            });
+        });
+        //res.render('backend/blog/index', { title: 'Blogs',layout:"backend/layout",data:blog });
+        //res.render('forntend/blog',{title:'home',data:blog });
+        res.render('forntend/index',{title:'home',data:blog});
+    });
+
+
+       
     },
     blogs:(req,res,next)=>{
         BlogModel.find((err,docs)=>{

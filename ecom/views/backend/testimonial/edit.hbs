@@ -15,47 +15,46 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mt-4 mb-4">
-                <h2 class="mt-5 mb-5 border border-success bg-success text-white rounded   " style="text-align: center;">Testimonial Edit</h5>
+                        <h2 class="mt-5 mb-5 border border-success bg-success text-white rounded   "
+                            style="text-align: center;">Testimonial Edit</h5>
 
-              </div>
+                    </div>
                     <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
-          </div>
+                    </div>
                     <!-- Floating Labels Form -->
-                    <form class="row g-3 my-3" method="post" action="/admin/testimonial/{{testimonial.id}}/update"encType="multipart/form-data">
+                    <form class="row g-3 my-3" method="post" action="/admin/testimonial/{{testimonial.id}}/update"
+                        encType="multipart/form-data">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" value="{{testimonial.name}}" class="form-control" placeholder="Name" name="name">
+                                <input type="text" value="{{testimonial.name}}" class="form-control" placeholder="Name"
+                                    name="name">
                                 <label>Name</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" value="{{testimonial.designation}}" placeholder="Designation" name="designation">
+                                <input type="text" class="form-control" value="{{testimonial.designation}}"
+                                    placeholder="Designation" name="designation">
                                 <label>Designation</label>
                             </div>
                         </div>
                         <div class="col-md-12">
-                             {{!-- <label>Image</label>
+
+                            <div>
+                                <img src="/{{testimonial.image}}" width="200px" class="border border-info mb-1"
+                                    alt="{{title}}">
+                                <input class="form-control form-control-lg" id="formFileLg" placeholder="Image"
+                                    name="image" type="file">
+                            </div>
+                        </div>
+                        <div class="col-12">
                             <div class="form-floating">
-                                 <img src="/{{testimonial.image}}" width="60px" alt="{{title}}">  
-                                <input type="file"  class="form-control" name="image">
-                                <img src="/{{blog.image}}" width="200px" class="border border-info mb-1" alt="{{blog.title}}">
-                               
-                            </div> --}}
-                             <div>
-                  {{!-- <label for="formFileLg" class="form-label">Image</label> --}}
-                  <img src="/{{testimonial.image}}" width="200px" class="border border-info mb-1" alt="{{title}}">  
-                  <input class="form-control form-control-lg" id="formFileLg" placeholder="Image" name="image"
-                    type="file">
-                </div>
+                                <textarea type="text" value="{{testimonisl.details}}" class="form-control"
+                                    placeholder="Details" style="height: 100px;" name="details"></textarea>
+                                <label>Details</label>
                             </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea type="text" value="{{testimonial.details}}" class="form-control" placeholder="Details" style="height: 100px;" name="details"></textarea>
-                                    <label>Details</label>
-                                </div>
-                            </div>
-                        
+                        </div>
+
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Update</button>

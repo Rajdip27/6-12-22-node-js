@@ -41,6 +41,7 @@ module.exports={
               twitter: team.twitter,
               instagram: team.instagram,
               linked: team.linked,
+              
               id:team._id
             }
             // console.log(details);

@@ -31,14 +31,14 @@ module.exports = {
     ContactModel.findById(req.params.id)
       .then((contact) => {
         // blog list
-        const details = {
-          title: "dhfdsf",
+        const data = {
+          title: contact.title,
           id: contact._id,
           details: contact.details,
-          image: contact.image,
+          image: contact.image
         }
-        // console.log(details);
-        res.render('backend/contact/edit', { title: 'Contact Edit', layout: "backend/layout", contact: details });
+       
+        res.render('backend/contact/edit', { title: 'Contact Edit', layout: "backend/layout", Contact: data });
       })
 
 

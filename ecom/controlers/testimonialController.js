@@ -35,7 +35,7 @@ module.exports = {
     TestimonialModel.findById(req.params.id)
       .then((Testimonial) => {
         // Testimonial list
-        const details = {
+        const data = {
           name: Testimonial.name,
           designation: Testimonial.designation,
           id: Testimonial._id,
@@ -43,8 +43,9 @@ module.exports = {
           image: Testimonial.image,
 
         }
+      
         // console.log(details);
-        res.render('backend/testimonial/edit', { title: 'Testimonial Edit', layout: "backend/layout", testimonial: details });
+        res.render('backend/testimonial/edit', { title: 'Testimonial Edit', layout: "backend/layout", testimonial: data });
       })
     //res.render('backend/testimonial/edit', { title: 'Admin testimonial edit', layout: 'backend/layout' });
   },
