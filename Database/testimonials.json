@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "639a0ab2038799268b9ec1cb"
+  },
+  "details": "A software engineer is a skilled person who can apply the theories and rules of software engineering to the design, development, restoration, maintenance, testing, and evaluation of various computer software.",
+  "image": "upload/167188684975872361990_2338457223087845_6270123743549325312_n.jpg",
+  "name": "Rajdip",
+  "designation": "Web Developer",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "639a0ad3038799268b9ec1ce"
+  },
+  "details": "A software engineer is a skilled person who can apply the theories and rules of software engineering to the design, development, restoration, maintenance, testing, and evaluation of various computer software.",
+  "image": "upload/1671886879620315234987_845103206637510_884782680094740304_n.jpg",
+  "name": "Muhammad Borhan",
+  "designation": "Web Developer",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "639abe80ae9dce6a9c342783"
+  },
+  "details": "A software engineer is a skilled person who can apply the theories and rules of software engineering to the design, development, restoration, maintenance, testing, and evaluation of various computer software.",
+  "image": "upload/1671886906693320631253_1217910995465410_1968592637161558422_n.jpg",
+  "name": "Ripon",
+  "designation": "Web Developer",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "639abee4ae9dce6a9c34278b"
+  },
+  "details": "A software engineer is a skilled person who can apply the theories and rules of software engineering to the design, development, restoration, maintenance, testing, and evaluation of various computer software.",
+  "image": "upload/1671886957833WhatsApp Imacxvcvzcxfafdsdfadsfdsdsfvzge 2022-12-24 at 1.55.36 PM.jpeg",
+  "name": "Sunjida Akter",
+  "designation": "Web Developer",
+  "__v": 0
+}]

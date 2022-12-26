@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "63a68297faaf0fda950f86f1"
+  },
+  "title": "Cox's Bazar",
+  "slug": "Cox's Bazar",
+  "details": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
+  "image": "upload/1671856791532longest-sea-beach-in.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a6acf7faaf0fda950f86fd"
+  },
+  "title": "Kuakata",
+  "slug": "Kuakata",
+  "details": "Kuakata is a town in southern Bangladesh known for its panoramic sea beach. Kuakata beach is a sandy expanse 18 kilometres long and 3 kilometres wide. From the beach one can have an unobstructed view of both sunrise and sunset over the Bay of Bengal",
+  "image": "upload/16718678633021622203999.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a6f94a23db020aaa864869"
+  },
+  "title": "Sajek Valley",
+  "slug": "Sajek Valley",
+  "details": "Sajek is a union located in the north of Chittagong Hill Tracts. It's under Baghaichori Upazila in Rangamati hill district, it is situated 67 kilometres (42 mi) north-east from Khagrachhari town and 95 kilometres (59 mi) north from Rangamati city.Sajek valley is known for its natural environment and is surrounded by mountains, dense forest, and grassland hill tracks. Many small rivers flow through the mountains among which the Kachalong and the Machalong are notable. On the way to Sajek valley, one has to cross the Mayni range and the Mayni river. The road to Sajek has high peaks and falls.",
+  "image": "upload/1671887178411279162151_369483945138441_7113599673380964828_n.jpg",
+  "__v": 0
+}]

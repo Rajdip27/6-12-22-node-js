@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "63a713dbdf2bfcbf87987e61"
+  },
+  "image": "upload/1671893979076address-icon-15.png",
+  "title": "Adderss",
+  "details": "Dhaka,Bangladesh",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a951e980063262f5c8ce58"
+  },
+  "image": "upload/1672040937471blue-email-box-circle-png-transparent-icon-2.png",
+  "title": "Email",
+  "details": "Srajdip920@gmail.com",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a9520e80063262f5c8ce5b"
+  },
+  "image": "upload/1672040974000Phone_icon.png",
+  "title": "Phone Number",
+  "details": "+8801701734627",
+  "__v": 0
+}]

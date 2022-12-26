@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "639a100079a20b7770cb7b3b"
+  },
+  "image": "upload/167188662478472361990_2338457223087845_6270123743549325312_n.jpg",
+  "name": "Rajdip Raj Santanu",
+  "designation": "Web Developer",
+  "facebook": "https://www.facebook.com/profile.php?id=100007707705327",
+  "twitter": "https://twitter.com/rajdip_santanu",
+  "instagram": "https://www.instagram.com/Rajdip_Raj_Santanu/",
+  "linked": "https://www.linkedin.com/in/rajdip-raj-santanu-7b0175253/",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a6f0e5ee6cba376a98f1f2"
+  },
+  "image": "upload/1671885374018WhatsApp Imacxvcvzcxfafdsdfadsfdsdsfvzge 2022-12-24 at 1.55.36 PM.jpeg",
+  "name": "Sunjida Akter",
+  "designation": "Web Developer",
+  "facebook": "https://www.facebook.com/sunjida.akter.5667",
+  "twitter": "https://www.facebook.com/sunjida.akter.5667",
+  "instagram": "https://www.facebook.com/sunjida.akter.5667",
+  "linked": "https://www.facebook.com/sunjida.akter.5667",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a6f68d23db020aaa86483c"
+  },
+  "image": "upload/1671886477626320631253_1217910995465410_1968592637161558422_n.jpg",
+  "name": "Ripon",
+  "designation": "Web Developer",
+  "facebook": "https://www.facebook.com/profile.php?id=100065768724529",
+  "twitter": "https://www.facebook.com/profile.php?id=100065768724529",
+  "instagram": "https://www.facebook.com/profile.php?id=100065768724529",
+  "linked": "https://www.facebook.com/profile.php?id=100065768724529",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a6f77323db020aaa86484c"
+  },
+  "image": "upload/1671886707609315234987_845103206637510_884782680094740304_n.jpg",
+  "name": "Muhammad Borhan",
+  "designation": "Web Developer",
+  "facebook": "https://www.facebook.com/rajkumar.borhan",
+  "twitter": "https://www.facebook.com/rajkumar.borhan",
+  "instagram": "https://www.facebook.com/rajkumar.borhan",
+  "linked": "https://www.facebook.com/rajkumar.borhan",
+  "__v": 0
+}]
